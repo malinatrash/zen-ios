@@ -1,0 +1,37 @@
+[
+  { "id": "layout", "kind": "layout", "data": {
+      "spaces": ["{work}", "{home}"],
+      "essentials": { "default": ["1700000000002-mail", "1700000000001-cal"], "builtin-2": ["1700000000003-jira"] }
+  } },
+  { "id": "builtin-2", "kind": "container", "data": { "guid": "builtin-2", "name": "Work", "icon": "briefcase", "color": "orange" } },
+  { "id": "{home}", "kind": "space", "data": {
+      "uuid": "{home}", "name": "Home", "icon": "🏠", "containerGuid": null,
+      "theme": { "type": "gradient", "opacity": 0.5, "texture": 0, "textureType": "grain",
+        "gradientColors": [
+          { "c": [244, 93, 74], "isCustom": false, "algorithm": "analogous", "isPrimary": true, "lightness": 50, "position": { "x": 10, "y": 20 }, "type": "explicit-lightness" },
+          { "c": [74, 120, 244], "isCustom": false, "isPrimary": false },
+          null
+        ] },
+      "children": ["1700000000010-news", "folder-1", "split-1", "1700000000020-open"]
+  } },
+  { "id": "{work}", "kind": "space", "data": {
+      "uuid": "{work}", "name": "Work", "icon": "chrome://browser/skin/zen-icons/selectable/briefcase.svg",
+      "theme": { "type": "gradient", "gradientColors": [ { "c": "#3366ff", "isCustom": true } ], "opacity": 0.4, "texture": 0 },
+      "containerGuid": "builtin-2", "children": ["1700000000030-gitlab"]
+  } },
+  { "id": "1700000000001-cal", "kind": "tab", "data": { "tabId": "1700000000001-cal", "url": "https://calendar.example.com/", "title": "Calendar", "icon": "data:image/png;base64,AAAA", "containerGuid": null, "essential": true, "pinned": true, "workspaceUuid": null, "folderId": null, "staticLabel": null, "hasStaticIcon": false, "defaultContainer": false } },
+  { "id": "1700000000002-mail", "kind": "tab", "data": { "tabId": "1700000000002-mail", "url": "https://mail.example.com/", "title": "Inbox (3)", "icon": "", "containerGuid": null, "essential": true, "pinned": true, "workspaceUuid": null, "folderId": null, "staticLabel": "Mail", "hasStaticIcon": false, "defaultContainer": false } },
+  { "id": "1700000000003-jira", "kind": "tab", "data": { "tabId": "1700000000003-jira", "url": "https://jira.example.com/", "title": "Jira", "icon": "", "containerGuid": "builtin-2", "essential": true, "pinned": true, "workspaceUuid": null, "folderId": null } },
+  { "id": "1700000000010-news", "kind": "tab", "data": { "tabId": "1700000000010-news", "url": "https://news.example.com/", "title": "News", "icon": "", "containerGuid": null, "essential": false, "pinned": true, "workspaceUuid": "{home}", "folderId": null } },
+  { "id": "folder-1", "kind": "folder", "data": { "folderId": "folder-1", "name": "Reading", "icon": null, "workspaceUuid": "{home}", "parentFolderId": null, "live": null, "children": ["1700000000011-blog", "folder-2"] } },
+  { "id": "folder-2", "kind": "folder", "data": { "folderId": "folder-2", "name": "Nested", "icon": "📚", "workspaceUuid": "{home}", "parentFolderId": "folder-1", "live": null, "children": ["1700000000012-docs", "folder-1"] } },
+  { "id": "1700000000011-blog", "kind": "tab", "data": { "tabId": "1700000000011-blog", "url": "https://blog.example.com/", "title": "", "icon": "", "essential": false, "pinned": true, "workspaceUuid": "{home}", "folderId": "folder-1" } },
+  { "id": "1700000000012-docs", "kind": "tab", "data": { "tabId": "1700000000012-docs", "url": "https://docs.example.com/guide", "title": "Guide", "icon": "", "essential": false, "pinned": true, "workspaceUuid": "{home}", "folderId": "folder-2" } },
+  { "id": "split-1", "kind": "split", "data": { "splitId": "split-1", "gridType": "vsep", "pinned": true, "tabs": ["1700000000013-left", "1700000000014-right"], "workspaceUuid": "{home}", "folderId": null } },
+  { "id": "1700000000013-left", "kind": "tab", "data": { "tabId": "1700000000013-left", "url": "https://left.example.com/", "title": "Left", "icon": "", "essential": false, "pinned": true, "workspaceUuid": "{home}" } },
+  { "id": "1700000000014-right", "kind": "tab", "data": { "tabId": "1700000000014-right", "url": "https://right.example.com/", "title": "Right", "icon": "", "essential": false, "pinned": true, "workspaceUuid": "{home}" } },
+  { "id": "1700000000020-open", "kind": "tab", "data": { "tabId": "1700000000020-open", "url": "https://open.example.com/", "title": "Open tab", "icon": "", "essential": false, "pinned": false, "workspaceUuid": "{home}" } },
+  { "id": "1700000000030-gitlab", "kind": "tab", "data": { "tabId": "1700000000030-gitlab", "url": "https://gitlab.example.com/", "title": "GitLab", "icon": "", "containerGuid": "builtin-2", "essential": false, "pinned": true, "workspaceUuid": "{work}" } },
+  { "id": "1700000000099-gone", "deleted": true },
+  { "id": "future", "kind": "hologram", "data": { "anything": 1 } }
+]
